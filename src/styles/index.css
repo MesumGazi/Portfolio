@@ -13,7 +13,7 @@
   --danger: #d92d20;
   --success: #15803d;
 
-  --container: 800px;   /* just to see if it works */
+  --container: 1000px;
   --nav-height: 60px;
   --radius: 12px;
   --radius-sm: 8px;
@@ -184,9 +184,9 @@ textarea:focus-visible {
   justify-content: space-between;
   gap: 16px;
   height: 100%;
-  max-width: var(--container);
+  max-width: none;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .nav__brand {
@@ -292,8 +292,7 @@ textarea:focus-visible {
   margin-top: 10px;
   font-size: 0.92rem;
   max-width: 52ch;
-  white-space: pre-line;  
-
+  white-space: pre-line;
 }
 
 .hero__actions {
@@ -428,7 +427,6 @@ textarea:focus-visible {
 
 .card__body {
   margin-top: 8px;
-  font-size: 0.95rem;   /* was 0.92rem */
   font-size: 0.92rem;
   color: var(--muted);
 }
@@ -598,28 +596,28 @@ textarea:focus-visible {
    Footer
    ========================================================= */
 .footer {
-  padding: 20px 0 16px;          /* was 40px — much thinner */
+  padding: 20px 0 16px;
   border-top: 1px solid var(--border);
   text-align: center;
 }
 
 .footer__copyright {
   font-size: 0.8rem;
-  color: var(--fg);              /* full contrast — it's the "signature" */
+  color: var(--fg);
   letter-spacing: 0.01em;
 }
 
 .footer__rule {
   border: 0;
   border-top: 1px solid var(--border);
-  margin: 14px auto 10px;        /* vertical gap around the line */
+  margin: 14px auto 10px;
   width: 100%;
-  max-width: 100%;               /* spans the container width */
+  max-width: 100%;
 }
 
 .footer__line {
   font-size: 0.74rem;
-  color: var(--muted);           /* grey — supporting text */
+  color: var(--muted);
   line-height: 1.5;
 }
 
@@ -628,33 +626,36 @@ textarea:focus-visible {
   margin: 0 8px;
   opacity: 0.5;
 }
+
 /* =========================================================
-   Responsive
+   Mobile — ≤ 640px
    ========================================================= */
 @media (max-width: 640px) {
-  .container,
-  .nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  height: 100%;
-  max-width: none;
-  padding: 0 40px;
-}
 
+  /* Tighter page gutters */
+  .container {
+    padding: 0 18px;
+  }
+
+  /* Nav gets edge padding on mobile too */
+  .nav__inner {
+    padding: 0 18px;
+  }
+
+  /* Less vertical breathing room between sections */
   .section {
-    padding: 60px 0;
+    padding: 52px 0;
   }
 
   .hero {
-    padding-top: 48px;
+    padding-top: 40px;
   }
 
+  /* Hero stacks: avatar on top, text below */
   .hero__inner {
     flex-direction: column-reverse;
     align-items: flex-start;
-    gap: 26px;
+    gap: 24px;
   }
 
   .avatar {
@@ -662,8 +663,88 @@ textarea:focus-visible {
     height: 96px;
   }
 
+  /* Typography scales down */
+  .hero__name {
+    font-size: 1.9rem;
+    line-height: 1.15;
+  }
+
+  .hero__role {
+    font-size: 0.95rem;
+  }
+
+  .hero__tagline {
+    font-size: 0.98rem;
+    margin-top: 14px;
+  }
+
+  .hero__about {
+    font-size: 0.88rem;
+  }
+
+  .section__title {
+    font-size: 1.2rem;
+  }
+
+  .section__lead {
+    font-size: 0.9rem;
+  }
+
+  /* Nav: smaller links, tighter */
+  .nav__brand {
+    font-size: 0.88rem;
+  }
+
   .nav__link {
     padding: 6px 8px;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+  }
+
+  /* Cards breathe less */
+  .card {
+    padding: 16px;
+  }
+
+  .card__title {
+    font-size: 0.95rem;
+  }
+
+  .card__body {
+    font-size: 0.88rem;
+  }
+
+  /* Timeline: tighter indent */
+  .timeline__item {
+    padding-left: 16px;
+  }
+
+  .timeline__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .timeline__period {
+    font-size: 0.78rem;
+  }
+
+  .bullets li {
+    font-size: 0.86rem;
+  }
+
+  /* Contact form padding */
+  .field input,
+  .field textarea {
+    padding: 9px 11px;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer__copyright {
+    font-size: 0.78rem;
+  }
+
+  .footer__line {
+    font-size: 0.7rem;
   }
 }
