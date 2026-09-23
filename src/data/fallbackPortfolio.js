@@ -91,19 +91,6 @@ export const fallbackPortfolio = {
   links: [],   // ← no repo yet, so no link
 }
     
-    /* ,
-    {
-      id: 'exp-2',
-      role: 'Previous Job Title',
-      company: 'Previous Company',
-      location: 'City, Country',
-      period: 'Jun 2022 — Dec 2023',
-      highlights: [
-        'Placeholder achievement — one line, concrete.',
-        'Placeholder achievement — keep it to three bullets max.',
-      ],
-    },
-    */
   ],
 
   
