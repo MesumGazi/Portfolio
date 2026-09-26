@@ -5,7 +5,10 @@
  * secrets or private data here — only public endpoints.
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? ''
+import backendConfig from '../../backend-config.json'
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? backendConfig?.VITE_API_BASE_URL ?? ''
 
 export const isBackendConfigured = Boolean(API_BASE_URL)
 
