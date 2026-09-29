@@ -4,7 +4,7 @@ export default function Footer({ lastUpdated }) {
   return (
     <footer className="footer">
       <div className="container">
-        <p className="footer__copyright">© Mesum Gazi</p>
+        <p className="footer__copyright">© {year} Mesum Gazi</p>
 
         <hr className="footer__rule" />
 
