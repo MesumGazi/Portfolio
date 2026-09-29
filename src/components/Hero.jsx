@@ -10,7 +10,9 @@ export default function Hero({ profile }) {
         <div className="hero__text">
           {location && <p className="eyebrow">{location}</p>}
 
-          <h1 className="hero__name">{name}</h1>
+          <h1 className="hero__name">
+            {name}<span className="hero__name-dot" aria-hidden="true">.</span>
+          </h1>
           <p className="hero__role">{role}</p>
           <p className="hero__tagline">{tagline}</p>
           <p className="muted hero__about">{about}</p>

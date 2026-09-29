@@ -12,7 +12,16 @@ export default function Experience({ experience }) {
             <li key={job.id} className="timeline__item">
               <div className="timeline__head">
                 <h3 className="timeline__role">{job.role}</h3>
-                <span className="timeline__period">{job.period}</span>
+                <span className="timeline__period">
+                  {job.period?.endsWith('Present') ? (
+                    <>
+                      {job.period.slice(0, job.period.lastIndexOf('Present'))}
+                      <span className="timeline__present">Present</span>
+                    </>
+                  ) : (
+                    job.period
+                  )}
+                </span>
               </div>
 
               <p className="timeline__company">

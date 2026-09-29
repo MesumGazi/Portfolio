@@ -33,11 +33,6 @@ async function request(path, options = {}) {
   return response.status === 204 ? null : response.json()
 }
 
-/** Returns the public portfolio payload. Expected shape = fallbackPortfolio. */
-export function fetchPortfolio(signal) {
-  return request('/api/portfolio', { signal })
-}
-
 /** Sends a contact message. The backend decides where it actually goes. */
 export function sendContactMessage(payload) {
   return request('/api/contact', {

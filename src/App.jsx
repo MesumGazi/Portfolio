@@ -5,12 +5,12 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+import { fallbackPortfolio } from './data/fallbackPortfolio'
 import { SECTION_IDS } from './data/Navigation'
-import { usePortfolio } from './hooks/usePortfolio'
 import { useActiveSection } from './hooks/useActiveSection'
 
 export default function App() {
-  const portfolio = usePortfolio()
+  const portfolio = fallbackPortfolio
   const activeSection = useActiveSection(SECTION_IDS)
 
   return (

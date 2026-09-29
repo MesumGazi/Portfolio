@@ -4,12 +4,13 @@
 export function scrollToSection(id) {
   const element = document.getElementById(id)
   if (!element) return
+  const target = element.querySelector('.section__title') ?? element
 
   const prefersReducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches
 
-  element.scrollIntoView({
+  target.scrollIntoView({
     behavior: prefersReducedMotion ? 'auto' : 'smooth',
     block: 'start',
   })

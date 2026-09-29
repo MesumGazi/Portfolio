@@ -24,7 +24,7 @@ export default function Contact({ socials }) {
       await sendContactMessage(form)
       setForm(EMPTY_FORM)
       setStatus('sent')
-    } catch (error) {
+    } catch {
       setErrorMessage(
         isBackendConfigured
           ? 'Something went wrong. Please try again.'
@@ -37,87 +37,96 @@ export default function Contact({ socials }) {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <h2 className="section__title">Contact</h2>
-        <p className="section__lead">
-        </p>
+        <div className="contact__layout">
+          <div className="contact__intro">
+            <p className="eyebrow">CONTACT</p>
+            <h2 className="section__title contact__title">
+              <span>Let’s</span> talk.
+            </h2>
 
-        {socials?.length > 0 && (
-          <ul className="socials">
-            {socials.map((social) => (
-              <li key={social.label}>
-                <a
-                  className="link"
-                  href={social.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {social.label} <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <form className="form" onSubmit={handleSubmit} noValidate={false}>
-          <div className="field">
-            <label htmlFor="contact-name">Name</label>
-            <input
-              id="contact-name"
-              name="name"
-              type="text"
-              required
-              autoComplete="name"
-              value={form.name}
-              onChange={handleChange}
-            />
+            {socials?.length > 0 && (
+              <ul className="socials">
+                {socials.map((social) => (
+                  <li key={social.label}>
+                    <a
+                      className="link"
+                      href={social.url}
+                      target={social.url.startsWith('mailto:') ? undefined : '_blank'}
+                      rel={social.url.startsWith('mailto:') ? undefined : 'noreferrer noopener'}
+                    >
+                      {social.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
-          <div className="field">
-            <label htmlFor="contact-email">Email</label>
-            <input
-              id="contact-email"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-              value={form.email}
-              onChange={handleChange}
-            />
-          </div>
+          <form className="form" onSubmit={handleSubmit} noValidate={false}>
+            <div className="field">
+              <label htmlFor="contact-name">Name</label>
+              <input
+                id="contact-name"
+                name="name"
+                type="text"
+                required
+                minLength={3}
+                maxLength={50}
+                autoComplete="name"
+                value={form.name}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="field">
-            <label htmlFor="contact-message">Message</label>
-            <textarea
-              id="contact-message"
-              name="message"
-              rows={5}
-              required
-              value={form.message}
-              onChange={handleChange}
-            />
-          </div>
+            <div className="field">
+              <label htmlFor="contact-email">Email</label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="form__footer">
-            <button
-              type="submit"
-              className="btn btn--primary"
-              disabled={status === 'sending'}
-            >
-              {status === 'sending' ? 'Sending…' : 'Send message'}
-            </button>
+            <div className="field field--message">
+              <label htmlFor="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows={5}
+                required
+                minLength={10}
+                maxLength={500}
+                value={form.message}
+                onChange={handleChange}
+              />
+            </div>
 
-            <p className="form__status" role="status" aria-live="polite">
-              {status === 'sent' && (
-                <span className="form__status--success">
-                  Thanks — your message was sent.
-                </span>
-              )}
-              {status === 'error' && (
-                <span className="form__status--error">{errorMessage}</span>
-              )}
-            </p>
-          </div>
-        </form>
+            <div className="form__footer">
+              <button
+                type="submit"
+                className="btn btn--primary"
+                disabled={status === 'sending'}
+              >
+                {status === 'sending' ? 'Sending…' : 'Send message'}
+              </button>
+
+              <p className="form__status" role="status" aria-live="polite">
+                {status === 'sent' && (
+                  <span className="form__status--success">
+                    Thanks — your message was sent.
+                  </span>
+                )}
+                {status === 'error' && (
+                  <span className="form__status--error">{errorMessage}</span>
+                )}
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   )

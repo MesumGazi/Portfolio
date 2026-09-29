@@ -9,10 +9,16 @@ export default function Projects({ projects }) {
         </p>
 
         <ul className="cards">
-          {projects.map((project) => (
-            <li key={project.id} className="card">
+          {projects.map((project, index) => (
+            <li
+              key={project.id}
+              className={`card ${index === 0 ? 'card--featured' : 'card--compact'}`}
+            >
               <div className="card__head">
-                <h3 className="card__title">{project.title}</h3>
+                <div className="card__heading">
+                  {index === 0 && <span className="card__eyebrow">Featured project</span>}
+                  <h3 className="card__title">{project.title}</h3>
+                </div>
                 {project.year && <span className="card__meta">{project.year}</span>}
               </div>
 

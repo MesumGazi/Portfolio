@@ -1,8 +1,4 @@
-/**
- * Local placeholder content.
- * Replace every value here with your real details, or serve the same shape
- * from your backend at GET /api/portfolio.
- */
+/** Local portfolio content rendered by the frontend. */
 export const fallbackPortfolio = {
   profile: {
     name: 'Mesum Gazi',
@@ -28,7 +24,6 @@ export const fallbackPortfolio = {
   tech: ['Python', 'asyncio', 'Pydantic', 'REST APIs', 'Chaos Engineering'],
 
       links: [
-        { label: 'Live', url: 'https://example.com' },
         { label: 'Code', url: 'https://github.com/MesumGazi/Distributed-API-Chaos-Testing-Monitoring-Platform.git' },
       ],
     },
@@ -39,32 +34,8 @@ export const fallbackPortfolio = {
   description:
     'A framework that watches you use a web app and generates Playwright test scaffolding from what it sees  page objects, test data, and a runnable spec. Aiming to cut the boilerplate cost of new automation from a day to minutes.',
   tech: ['Python', 'Playwright', 'LLM APIs'],
-  links: [
-        { label: 'Live', url: 'https://example.com' },
-        { label: 'Code', url: 'https://github.com/MesumGazi' },
-      ],
+  links: [{ label: 'GitHub', url: 'https://github.com/MesumGazi' }],
 },
-    
-    /*,
-    {
-      id: 'project-2',
-      title: 'Project Two',
-      year: '2024',
-      description:
-        'Placeholder description. Keep it to two lines — the interesting part, not the feature list.',
-      tech: ['TypeScript', 'Express', 'Redis'],
-      links: [{ label: 'Code', url: 'https://example.com' }],
-    },
-    {
-      id: 'project-3',
-      title: 'Project Three',
-      year: '2024',
-      description:
-        'Placeholder description. Mention scale or a constraint if it makes the work sound harder than it was.',
-      tech: ['Vite', 'WebSockets'],
-      links: [{ label: 'Live', url: 'https://example.com' }],
-    },
-    */
   ],
 
   experience: [
@@ -74,31 +45,33 @@ export const fallbackPortfolio = {
       company: 'Sonata Software',
       location: 'Bangalore, India',
       period: 'Jun 2024 — Present',
-      tech: ['Playwright', 'Python', 'Docker', 'CI/CD', 'Xray', 'REST APIs'],
+      tech: [
+        'Playwright',
+        'Python',
+        'AWS Bedrock',
+        'AWS Lambda',
+        'PostgreSQL',
+        'GitLab CI/CD',
+        'Docker',
+        'Xray',
+      ],
       highlights: [
-     'Built test automation from zero for a UK-based client — one of the world\'s largest travel companies. Regression now runs in 50 minutes (was 4 hours); smoke in 10 (was 60).',
-     'First on the team to achieve 100% in-sprint automation — QA is no longer the thing releases wait on.',
-     'Designed for extension, not rewrites — new scenarios plug into the existing framework, so the suite scales without accumulating maintenance debt.',
-],
+        'Built a modular API/UI automation framework from scratch with CLI-driven configuration.',
+        'Created a Playwright Codegen and AWS Bedrock tool that turns recorded flows into runnable, page-object-based Python tests.',
+        'As sole SDET for an enterprise AI support product, tested AWS Lambda contracts, errors, payload integrity, and multilingual AI endpoints.',
+        'Added semantic checks for LLM outputs and SQL/PostgreSQL data validation.',
+        'Automated suites with GitLab CI, deployment triggers, and Teams alerts. Regression fell from 4 hours to 50 minutes; smoke from 60 minutes to 10; in-sprint automation reached 100%.',
+      ],
     },
-    {
-  id: 'agentic-testgen',
-  title: 'agentic-testgen',
-  year: '2026 — Planning',
-  description:
-    'A framework that watches you use a web app and generates Playwright test scaffolding from what it sees — page objects, test data, and a runnable spec. Aiming to cut the boilerplate cost of new automation from a day to minutes.',
-  tech: ['Python', 'Playwright', 'LLM APIs'],
-  links: [],   // ← no repo yet, so no link
-}
-    
   ],
 
   
 
-  // Deliberately no email here — the contact form is the private channel.
+  // Public contact links.
   socials: [
-    { label: 'GitHub', url: 'https://github.com/MesumGazi' },
+    { label: 'Email', url: 'mailto:gazimesum@gmail.com' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/mesum-gazi-a6b12317b/' },
+    { label: 'GitHub', url: 'https://github.com/MesumGazi' },
     { label: 'X', url: 'https://x.com/MesumGazi' },
   ],
 }
