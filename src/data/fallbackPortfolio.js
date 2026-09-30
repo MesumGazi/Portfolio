@@ -9,6 +9,7 @@ export const fallbackPortfolio = {
     about:
       "I'm 25, and I've spent the last two and a half years building test automation frameworks  the kind that quietly catch bugs before anyone notices, so the team ships faster and I look like I knew what I was doing. If I'm honest, it also makes me look a little cooler than I actually am.",
     photoUrl: '/main-image.jpg', // e.g. '/me.jpg' or a CDN URL
+    alternatePhotoUrl: '/mesum-gazi-alt-portrait.png',
     resumeUrl: '/Gazi___SDET_RESUME.pdf', // e.g. '/resume.pdf'
     lastUpdated: 'September 2026',   // ← add this line
 
